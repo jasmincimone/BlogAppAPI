@@ -5,7 +5,7 @@ function generateAccessToken(username){
 }
 
 function authenticateToken(req, res, next){
-    const authHeaders = req.get('Authorization')
+    const authHeader = req.get('Authorization')
 
     if(authHeader === null){
         res.status(403).json({message: 'FORBIDDEN.'})

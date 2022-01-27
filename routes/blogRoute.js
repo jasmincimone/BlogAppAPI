@@ -1,5 +1,4 @@
 const express = require('express')
-const bcrypt = require('bcrypt')
 const Blog = require('../schemas/blogSchema')
 const jwt = require('jsonwebtoken')
 const { authenticateToken } = require('../middleware/jwt')
@@ -11,17 +10,17 @@ blogRoute.get(':/username', authenticateToken, (req, res) => {
     //GET all blog entries by username
     let username = req.params.username
 
-    Blog.find({username: username}, (err, blogs) =>{
+    Blog.find({created_by: username}, (err, blogs) =>{
         if(err){
             res.status(400).json({message: err.message})
         }
-        res.status(200).json({messgae: blogs})
+        res.status(200).json({message: blogs})
     })
 })
 
 blogRoute.post('/:username', authenticateToken, (req, res) => {
     //CREATE blog & assign it to username
-    let usernae = req.params.username
+    let username = req.params.username
     let blogPost = req.body
     blogPost.created_by = username
     blogPost.created_at = Date.now()
