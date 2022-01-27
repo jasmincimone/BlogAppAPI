@@ -1,18 +1,19 @@
 # Blog App API
 ## Tech Stack
--Server: Node, Express
--Tools: Mongo
+    -Server: Node, Express 
+
+    -Tools: Mongo
 
 ## Environmental Variables
 To run this project, you will need to download the following environmental variables to your .env file:
 
-PORT=8888
+    PORT=8888
 
-MANGO_URI=" "
+    MANGO_URI=" "
 
-SALT=8
+    SALT=8
 
-JWT_SECRET="
+    JWT_SECRET="
 
 ## SETUP
     - Server
