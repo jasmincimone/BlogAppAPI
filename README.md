@@ -1,9 +1,9 @@
-### Blog App API
-##Tech Stack
+# Blog App API
+## Tech Stack
 -Server: Node, Express
 -Tools: Mongo
 
-##Environmental Variables
+## Environmental Variables
 To run this project, you will need to download the following environmental variables to your .env file:
 
 PORT=8888
@@ -22,7 +22,7 @@ JWT_SECRET="
     - Routes
         - /auth
         - /blogs
-# Endpoints:
+## Endpoints:
     - /auth
         - login
             - CREATE
@@ -39,10 +39,10 @@ JWT_SECRET="
             - READ
                 - ONLY display NON private blogs
     
-# Parameters
+## Parameters
 
 
-# Schema
+## Schemas
    - User Schema
         - username: string, required
         - email: string, required
@@ -57,4 +57,4 @@ JWT_SECRET="
         - private: boolean, required 
         
 ## Hosted On Heroku at: 
-# [BlogAppAPI](https://git.heroku.com/neondaydreams-blog-app.git)
+### [BlogAppAPI](https://git.heroku.com/neondaydreams-blog-app.git)
