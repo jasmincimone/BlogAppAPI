@@ -9,7 +9,7 @@ const swaggerUI = require('swagger-ui-express')
 dotenv.config()
 
 const app = express()
-const port= 8888 || process.env.PORT
+const port = process.env.PORT || 8888
 
 //LOCAL REQS
 const mongoConnection = require('./config')

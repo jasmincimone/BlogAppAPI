@@ -21,6 +21,20 @@ module.exports = {
         }]
       },
     },
+    "/auth/login": {
+        post: {
+          summary: "User login.",
+          parameters: [{
+            name: "newUser",
+            in: "body",
+            schema: {
+  
+            },
+            required: true,
+            description: "Registers a user."
+          }]
+        },
+      },
   "/blogs": {
     get: {
       summary: "Test Route",
