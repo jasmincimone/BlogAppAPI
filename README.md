@@ -49,6 +49,8 @@ To run this project, you will need to download the following environmental varia
         - email: string, required
         - birthday: date, required
         - age: number
+
+        
     -Blog Schema
         - created_by: string, required
         - created_at: date, required
@@ -58,4 +60,4 @@ To run this project, you will need to download the following environmental varia
         - private: boolean, required 
         
 ## Hosted On Heroku at: 
-### [BlogAppAPI](https://git.heroku.com/neondaydreams-blog-app.git)
+### [BlogAppAPI](https://neondaydreams-blog-app.herokuapp.com/)
