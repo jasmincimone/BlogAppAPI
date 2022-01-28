@@ -6,7 +6,7 @@ const { authenticateToken } = require('../middleware/jwt')
 const blogRoute = express.Router()
 
 
-blogRoute.get(':/username', authenticateToken, (req, res) => {
+blogRoute.get('/:username', authenticateToken, (req, res) => {
     //GET all blog entries by username
     let username = req.params.username
 
@@ -33,7 +33,7 @@ blogRoute.post('/:username', authenticateToken, (req, res) => {
     })
 })
 
-blogRoute.get('/:id ', (req, res) => {
+blogRoute.get('/:username/:id', authenticateToken, (req, res) => {
     //GET specific blog
     let id = req.params.id
     Blog.findById(id, (err, blog) => {
@@ -44,9 +44,10 @@ blogRoute.get('/:id ', (req, res) => {
     })
 })
 
-blogRoute.put('/:id', (req, res) => {
+blogRoute.put('/:id', authenticateToken, (req, res) => {
     //UPDATE specific blog
     let id = req.params.id
+    let newBlog = req.body
     Blog.findByIdAndUpdate(id, newBlog, (err, blog) => {
         if(err){
             res.status(400).json({message: err.message})
@@ -55,14 +56,14 @@ blogRoute.put('/:id', (req, res) => {
     })
 })
 
-blogRoute.delete('/:id', (req, res) => {
+blogRoute.delete('/:id', authenticateToken, (req, res) => {
     //DELETE specific blog
     let id = req.params.id
     Blog.findByIdAndDelete(id, (err) =>{
     if(err){
         res.status(404).json({message: err.message})
     }
-    res.status(204).json({message: "DELETED"})
+    res.status(200).json({message: "DELETED!!!"})
     })
 })
 

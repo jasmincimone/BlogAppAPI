@@ -15,6 +15,7 @@ authRouter.get('/', (req, res) => {
 authRouter.post('/register', async(req ,res)=>{
     let user = req.body
     let password = user.password
+    let username = user.username
     let salt = Number(process.env.SALT)
 
     //TODO Make DataValidation Middleware LATER
@@ -34,6 +35,8 @@ authRouter.post('/register', async(req ,res)=>{
         if(result === undefined || result === null){
             res.status(400).json({message: "Please make a unique user"})
         }
+        let token = jwt.sign(username, process.env.JWT_SECRET)
+        res.setHeader('Authorization', token)
         res.status(200).json({data: result})
     })
 })
